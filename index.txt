@@ -1,0 +1,6 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>吴宝宝搭建的个人站点。</h1>
+</body>
+</html>
