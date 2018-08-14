@@ -1,0 +1,54 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+<meta charset="utf-8" /> 
+<title>作品展示</title> 
+<style> 
+      body{text-align:center} 
+#img{cursor:pointer;}
+    </style> 
+</head> 
+
+
+
+
+<script type="text/javascript">
+function image_load()
+{
+
+}
+
+var int= self.setInterval("clock()",100);
+function clock()
+{
+	var vec_image = document.getElementsByName("img")
+	for(var i=0;i<vec_image.length;i++){
+	    var image = vec_image[i];
+            if(image.alt==0) {
+               image.alt=image.width;
+            }
+	    if (image.alt>document.body.clientWidth) {
+                image.width=document.body.clientWidth;
+            }
+
+	    
+	}
+}
+
+
+<!--
+function displayMsg()
+{
+alert("Hello World!")
+}
+//-->
+</script>
+
+
+
+<body> 
+<p>
+<img src=pic/pic71.jpg onLoad="image_load();" name="img" alt=""/>
+</p> 
+</body> 
+</html>
