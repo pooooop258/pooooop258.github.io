@@ -10,6 +10,9 @@ done
 for f in `ls pic/*.bmp`; do 
 echo "<img src=\"$f\" onLoad=\"image_load();\" name=\"img\" alt=\"\"/>" >> index.html 
 done 
+for f in `ls pic/*.gif`; do 
+echo "<img src=\"$f\" onLoad=\"image_load();\" name=\"img\" alt=\"\"/>" >> index.html 
+done 
 for f in `ls pic/*.png`; do 
 echo "<img src=\"$f\" onLoad=\"image_load();\" name=\"img\" alt=\"\"/>" >> index.html 
 done 
