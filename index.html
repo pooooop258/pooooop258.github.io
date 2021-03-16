@@ -1,143 +1,133 @@
-<!DOCTYPE html>
-<html lang="zh">
 
+<!DOCTYPE
+html>
+<html>
 <head>
-    <meta charset=" utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>作品展示</title>
-    <script src="https://upcdn.b0.upaiyun.com/libs/jquery/jquery-2.0.2.min.js"></script>
-    <script type="text/javascript">
-        function create(parentId, eleType, eleName, eleId, eleValue) {
-            var board = document.getElementById(parentId);
-            var e = createElement("input", eleName);
-            e.type = eleType;
-            e.id = eleId;
-            e.value = elevalue;
-            board.appendChild(e);
-            //设置选中  
-            e.setAttribute("checked", "checked");
-            //添加文字  
-            board.appendChild(document.createTextNode("Item"));
-        }
-
-        function image_load()
-        {
-
-        }
-
-
-        var int= self.setInterval("clock()",100);
-        function clock()
-        {
-            var vec_image = document.getElementsByName("img")
-            for(var i=0;i<vec_image.length;i++){
-                var image = vec_image[i];
-                if(image.alt==0) {
-                    image.alt=image.width;
-                }
-                if (image.alt>document.body.clientWidth) {
-                    image.width=document.body.clientWidth;
-                }
-            }
-        }
-
-        function createElement(type, name) {
-            var element = null;
-            try {
-                element = document.createElement_x('<' + type + ' name="' + name + '">');
-            } catch (e) {
-                // Probably failed because we’re not running on IE  
-            }
-            if (!element) {
-                element = document.createElement(type);
-                element.name = name;
-            }
-            return element;
-        }
-
-
-        window.onload = function() {
-
-            var str_status = ""
-            var str_log = ""
-            var checkbox_list = {}
-
-            var mydiv = document.getElementById("mydiv");
-            // mydiv.setAttribute("style", "vertical-align:middle; position: fixed; top: 5px;left:5px;");
-
-            var btn_convert = document.createElement("input");
-            btn_convert.type = "button";
-            btn_convert.value = "全部"
-            btn_convert.setAttribute("style", "width:170px;height:30px;font-size:12px;");
-            btn_convert.addEventListener("click", onAll);
-            mydiv.appendChild(btn_convert);
-
-            var btn_details = document.createElement("input");
-            btn_details.type = "button";
-            btn_details.value = "详情页"
-            btn_details.setAttribute("style", "width:170px;height:30px;font-size:12px;");
-            btn_details.addEventListener("click", onDetails);
-            mydiv.appendChild(btn_details);
-
-            var btn_topic = document.createElement("input");
-            btn_topic.type = "button";
-            btn_topic.value = "专题"
-            btn_topic.setAttribute("style", "width:170px;height:30px;font-size:12px;");
-            btn_topic.addEventListener("click", onTopic);
-            mydiv.appendChild(btn_topic);
-
-            mydiv.appendChild(document.createElement("br"))
-            var mydiv2 = document.getElementById("mydiv2");
-
-            onAll();
-            function showImage(vec_image)
-            {
-                var str_html = ""
-                for(var i=0;i<vec_image.length;i++){
-                    var image = vec_image[i];
-                    str_html = str_html + '<img src="' + image + '" onLoad="image_load();" name="img" alt=""/>'
-                }
-                $('#mydiv1').html(str_html)
-                var mydiv = document.getElementById("mydiv1");
-                mydiv.setAttribute("style", "width: 100%;");
-            }
-
-            function onAll() {
-                showImage(["res/details/details1.jpg", "res/details/details10.jpg", "res/details/details11.jpg", "res/details/details12.jpg", "res/details/details13.jpg", "res/details/details14.jpg", "res/details/details15.jpg", "res/details/details16.jpg", "res/details/details17.jpg", "res/details/details18.jpg", "res/details/details19.jpg", "res/details/details2.jpg", "res/details/details20.jpg", "res/details/details21.jpg", "res/details/details22.jpg", "res/details/details23.jpg", "res/details/details24.jpg", "res/details/details3.jpg", "res/details/details4.jpg", "res/details/details5.jpg", "res/details/details6.jpg", "res/details/details7.jpg", "res/details/details8.jpg", "res/details/details9.jpg", "res/topic/topic1.jpg", "res/topic/topic10.jpg", "res/topic/topic11.jpg", "res/topic/topic12.jpg", "res/topic/topic13.jpg", "res/topic/topic14.jpg", "res/topic/topic2.jpg", "res/topic/topic3.jpg", "res/topic/topic4.jpg", "res/topic/topic5.jpg", "res/topic/topic6.jpg", "res/topic/topic7.jpg", "res/topic/topic8.jpg", "res/topic/topic9.jpg"]);
-            }
-            function onDetails() {
-                showImage(["res/details/details1.jpg", "res/details/details10.jpg", "res/details/details11.jpg", "res/details/details12.jpg", "res/details/details13.jpg", "res/details/details14.jpg", "res/details/details15.jpg", "res/details/details16.jpg", "res/details/details17.jpg", "res/details/details18.jpg", "res/details/details19.jpg", "res/details/details2.jpg", "res/details/details20.jpg", "res/details/details21.jpg", "res/details/details22.jpg", "res/details/details23.jpg", "res/details/details24.jpg", "res/details/details3.jpg", "res/details/details4.jpg", "res/details/details5.jpg", "res/details/details6.jpg", "res/details/details7.jpg", "res/details/details8.jpg", "res/details/details9.jpg"]);
-                // $('#mydiv1').html('<img src="pic/01.jpg" onLoad="image_load();" name="img" alt=""/> \
-                //                    <img src="pic/02.jpg" onLoad="image_load();" name="img" alt=""/> \
-                // ');
-            }
-
-            function onTopic() {
-                showImage(["res/topic/topic1.jpg", "res/topic/topic10.jpg", "res/topic/topic11.jpg", "res/topic/topic12.jpg", "res/topic/topic13.jpg", "res/topic/topic14.jpg", "res/topic/topic2.jpg", "res/topic/topic3.jpg", "res/topic/topic4.jpg", "res/topic/topic5.jpg", "res/topic/topic6.jpg", "res/topic/topic7.jpg", "res/topic/topic8.jpg", "res/topic/topic9.jpg"]);
-                // $('#mydiv1').load('res/details2.html');
-                // showImage(["pic/01.jpg", "pic/02.jpg", "pic/03.gif", "pic/04.jpg", "pic/05.gif", "pic/06.jpg", "pic/07.jpg", "pic/08.jpg", "pic/09.jpg", "pic/10.jpg", "pic/11.jpg", "pic/12.jpg", "pic/13.jpg", "pic/14.jpg", "pic/15.jpg", "pic/16.jpg", "pic/17.jpg", "pic/18.jpg", "pic/19.jpg", "pic/20.jpg", "pic/21.jpg", "pic/22.jpg", "pic/23.jpg", "pic/24.jpg", "pic/25.jpg", "pic/26.jpg", "pic/27.jpg", "pic/28.jpg", "pic/29.jpg", "pic/30.jpg", "pic/31.jpg", "pic/32.jpg", "pic/33.jpg", "pic/34.jpg", "pic/35.jpg", "pic/36.jpg", "pic/37.jpg", "pic/38.jpg", "pic/39.jpg", "pic/40.jpg", "pic/41.jpg", "pic/42.jpg", "pic/43.jpg", "pic/44.jpg", "pic/45.jpg", "pic/46.jpg", "pic/47.jpg", "pic/48.jpg", "pic/49.jpg", "pic/50.jpg", "pic/51.jpg", "pic/52.jpg", "pic/53.jpg", "pic/54.jpg", "pic/55.jpg", "pic/56.jpg", "pic/57.jpg", "pic/58.jpg", "pic/59.jpg", "pic/60.jpg", "pic/61.jpg", "pic/62.jpg", "pic/63.jpg", "pic/64.jpg", "pic/65.jpg", "pic/66.jpg", "pic/67.jpg", "pic/68.jpg", "pic/69.jpg", "pic/70.jpg", "pic/71.jpg", "pic/72.jpg", "pic/73.jpg", "pic/74.jpg", "pic/75.jpg", "pic/76.jpg"]);
-            }
-        }
-    </script>
+<meta
+charset="utf-8"
+/>
+<title>作品展示</title>
+<style>
+body{text-align:center}
+#img{cursor:pointer;}
+</style>
 </head>
-
-<body >
-    <div id="mydiv2" style="width: 100%;"></div>
-    <div id="mydiv3" style="width: 100%;"></div>
-    <div id="mydiv4" style="width: 100%;"></div>
-    </br>
-    <div id="mydiv" style="width: 100%;"></div>
-    <!-- <div id="mydiv" style="position: absolute; left: 0%; top: 0%;"></div> -->
-    </br>
-    <div id="mydiv1" style="width: 100%;"></div>
-
-
-</body>
-
-
-<script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script type="text/javascript">
-
+<script
+type="text/javascript">
+function
+image_load()
+{
+}
+var
+int=
+self.setInterval("clock()",100);
+function
+clock()
+{
+var
+vec_image
+=
+document.getElementsByName("img")
+for(var
+i=0;i<vec_image.length;i++){
+var
+image
+=
+vec_image[i];
+if(image.alt==0)
+{
+image.alt=image.width;
+}
+if
+(image.alt>document.body.clientWidth)
+{
+image.width=document.body.clientWidth;
+}
+}
+}
+<!--
+function
+displayMsg()
+{
+}
+//-->
 </script>
-
+<body>
+<img src="pic/01.jpg" onLoad="image_load();" name="img" alt=""/>
+<img src="pic/02.jpg" onLoad="image_load();" name="img" alt=""/>
+<img src="pic/03.gif" onLoad="image_load();" name="img" alt=""/>
+<img src="pic/04.jpg" onLoad="image_load();" name="img" alt=""/>
+<img src="pic/05.gif" onLoad="image_load();" name="img" alt=""/>
+<img src="pic/06.jpg" onLoad="image_load();" name="img" alt=""/>
+<img src="pic/07.jpg" onLoad="image_load();" name="img" alt=""/>
+<img src="pic/08.jpg" onLoad="image_load();" name="img" alt=""/>
+<img src="pic/09.jpg" onLoad="image_load();" name="img" alt=""/>
+<img src="pic/10.jpg" onLoad="image_load();" name="img" alt=""/>
+<img src="pic/11.jpg" onLoad="image_load();" name="img" alt=""/>
+<img src="pic/12.jpg" onLoad="image_load();" name="img" alt=""/>
+<img src="pic/13.jpg" onLoad="image_load();" name="img" alt=""/>
+<img src="pic/14.jpg" onLoad="image_load();" name="img" alt=""/>
+<img src="pic/15.jpg" onLoad="image_load();" name="img" alt=""/>
+<img src="pic/16.jpg" onLoad="image_load();" name="img" alt=""/>
+<img src="pic/17.jpg" onLoad="image_load();" name="img" alt=""/>
+<img src="pic/18.jpg" onLoad="image_load();" name="img" alt=""/>
+<img src="pic/19.jpg" onLoad="image_load();" name="img" alt=""/>
+<img src="pic/20.jpg" onLoad="image_load();" name="img" alt=""/>
+<img src="pic/21.jpg" onLoad="image_load();" name="img" alt=""/>
+<img src="pic/22.jpg" onLoad="image_load();" name="img" alt=""/>
+<img src="pic/23.jpg" onLoad="image_load();" name="img" alt=""/>
+<img src="pic/24.jpg" onLoad="image_load();" name="img" alt=""/>
+<img src="pic/25.jpg" onLoad="image_load();" name="img" alt=""/>
+<img src="pic/26.jpg" onLoad="image_load();" name="img" alt=""/>
+<img src="pic/27.jpg" onLoad="image_load();" name="img" alt=""/>
+<img src="pic/28.jpg" onLoad="image_load();" name="img" alt=""/>
+<img src="pic/29.jpg" onLoad="image_load();" name="img" alt=""/>
+<img src="pic/30.jpg" onLoad="image_load();" name="img" alt=""/>
+<img src="pic/31.jpg" onLoad="image_load();" name="img" alt=""/>
+<img src="pic/32.jpg" onLoad="image_load();" name="img" alt=""/>
+<img src="pic/33.jpg" onLoad="image_load();" name="img" alt=""/>
+<img src="pic/34.jpg" onLoad="image_load();" name="img" alt=""/>
+<img src="pic/35.jpg" onLoad="image_load();" name="img" alt=""/>
+<img src="pic/36.jpg" onLoad="image_load();" name="img" alt=""/>
+<img src="pic/37.jpg" onLoad="image_load();" name="img" alt=""/>
+<img src="pic/38.jpg" onLoad="image_load();" name="img" alt=""/>
+<img src="pic/39.jpg" onLoad="image_load();" name="img" alt=""/>
+<img src="pic/40.jpg" onLoad="image_load();" name="img" alt=""/>
+<img src="pic/41.jpg" onLoad="image_load();" name="img" alt=""/>
+<img src="pic/42.jpg" onLoad="image_load();" name="img" alt=""/>
+<img src="pic/43.jpg" onLoad="image_load();" name="img" alt=""/>
+<img src="pic/44.jpg" onLoad="image_load();" name="img" alt=""/>
+<img src="pic/45.jpg" onLoad="image_load();" name="img" alt=""/>
+<img src="pic/46.jpg" onLoad="image_load();" name="img" alt=""/>
+<img src="pic/47.jpg" onLoad="image_load();" name="img" alt=""/>
+<img src="pic/48.jpg" onLoad="image_load();" name="img" alt=""/>
+<img src="pic/49.jpg" onLoad="image_load();" name="img" alt=""/>
+<img src="pic/50.jpg" onLoad="image_load();" name="img" alt=""/>
+<img src="pic/51.jpg" onLoad="image_load();" name="img" alt=""/>
+<img src="pic/52.jpg" onLoad="image_load();" name="img" alt=""/>
+<img src="pic/53.jpg" onLoad="image_load();" name="img" alt=""/>
+<img src="pic/54.jpg" onLoad="image_load();" name="img" alt=""/>
+<img src="pic/55.jpg" onLoad="image_load();" name="img" alt=""/>
+<img src="pic/56.jpg" onLoad="image_load();" name="img" alt=""/>
+<img src="pic/57.jpg" onLoad="image_load();" name="img" alt=""/>
+<img src="pic/58.jpg" onLoad="image_load();" name="img" alt=""/>
+<img src="pic/59.jpg" onLoad="image_load();" name="img" alt=""/>
+<img src="pic/60.jpg" onLoad="image_load();" name="img" alt=""/>
+<img src="pic/61.jpg" onLoad="image_load();" name="img" alt=""/>
+<img src="pic/62.jpg" onLoad="image_load();" name="img" alt=""/>
+<img src="pic/63.jpg" onLoad="image_load();" name="img" alt=""/>
+<img src="pic/64.jpg" onLoad="image_load();" name="img" alt=""/>
+<img src="pic/65.jpg" onLoad="image_load();" name="img" alt=""/>
+<img src="pic/66.jpg" onLoad="image_load();" name="img" alt=""/>
+<img src="pic/67.jpg" onLoad="image_load();" name="img" alt=""/>
+<img src="pic/68.jpg" onLoad="image_load();" name="img" alt=""/>
+<img src="pic/69.jpg" onLoad="image_load();" name="img" alt=""/>
+<img src="pic/70.jpg" onLoad="image_load();" name="img" alt=""/>
+<img src="pic/71.jpg" onLoad="image_load();" name="img" alt=""/>
+<img src="pic/72.jpg" onLoad="image_load();" name="img" alt=""/>
+<img src="pic/73.jpg" onLoad="image_load();" name="img" alt=""/>
+<img src="pic/74.jpg" onLoad="image_load();" name="img" alt=""/>
+<img src="pic/75.jpg" onLoad="image_load();" name="img" alt=""/>
+<img src="pic/76.jpg" onLoad="image_load();" name="img" alt=""/>
+</body>
 </html>
-
